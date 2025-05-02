@@ -64,3 +64,30 @@ console.log(ourReadonlyTuple);
 //named tuple
 const work:[x:number, y:string]=[55,'anjana'];
 console.log(work);
+//TS object types
+const car:{type:string, model:string, year:number}={
+    type:'toyoto',
+    model:'corolla',
+    year:2009
+};
+console.log(car)
+//TS enums: two types
+//1.string 2. numeric
+enum directions{
+    north,
+    south,
+    east,
+    west
+}
+let currentdirection=directions.north
+console.log(directions.north)//we will get value log 0
+
+enum ddirections{
+    north,
+    south,
+    east,
+    west
+}
+let currentddirection=ddirections.north
+console.log(ddirections) //we can observe here each directon increase by 1 by taking initial value 0
+
