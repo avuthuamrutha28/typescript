@@ -1,0 +1,66 @@
+//TS types
+//1.Eplicit(mentioning the type)
+let myName:string='Amrutha Avuthu';
+console.log(myName)
+
+//2.Implicit(TS itself finds the type based on given value)
+let lastname='amrutha';
+console.log(lastname);
+
+//identifing errors in TS types
+
+let brother='Heemanth reddy';
+brother=26;
+console.log(brother);
+//it shows the error like number is not assignable to type string
+
+let bbrother='Reddy;'
+bbrother='hemanth';
+console.log(bbrother);
+
+//TS special types
+//TS always wont infer the type at that case there are some special types which disables the typechecking
+//1.any
+let a=false;
+a='string';
+Math.round(a);
+console.log(a);
+
+//it gives error like Argument of type 'boolean' is not assignable to parameter of type 'number'
+//if we apply 'any' type to this then it donot show any error as it stops checking type check
+
+let aa: any='true';
+aa='string';
+Math.round(aa);
+console.log(aa);
+
+//TS arrays
+//syntax: const array_name=[item1, item2,....]
+const family=['Maheesh', 'Srilakshmi', 'Heemanth', 'Amrutha'];
+console.log(family);
+
+const fam:string[]=[];
+fam.push('Pandu', 'Viruth');
+console.log(fam);
+
+const names:string[]=[];
+names.push(5);
+console.log(names);//it gives the error like Argument of type 'number' is not assignable to parameter of type 'string' as we try to push number to a string.
+//TS tuple: tuple is an array which has predefined length and type for each index
+
+let tuple:[boolean, number, string];
+tuple=[true, 5, 'ammu'];
+tuple.push('something');
+console.log(tuple);
+//Readonly tuple: which cant be changed i.e can not add another element
+const myReadonlyTuple:readonly[number, boolean, string]=[6, false, 'five'];
+console.log(myReadonlyTuple);
+
+const ourReadonlyTuple:readonly[number,string]=[2,'two'];
+ourReadonlyTuple.push('anu');
+console.log(ourReadonlyTuple);
+//now if we try to insert another element in tuple while using readonly it gives error like Property 'push' does not exist on type 'readonly [number, string]'
+
+//named tuple
+const work:[x:number, y:string]=[55,'anjana'];
+console.log(work);
