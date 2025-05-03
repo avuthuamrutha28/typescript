@@ -90,4 +90,23 @@ enum ddirections{
 }
 let currentddirection=ddirections.north
 console.log(ddirections) //we can observe here each directon increase by 1 by taking initial value 0
+//TS alias:it gives the custome name insted of own name and mostly used for strings, objects, arrays
+
+  type peopleName=string;
+  type peopleAge=number;
+  type peopleGender=string;
+  type people={
+    Name:peopleName;//here we gave custom name as Name for the PeopleName
+    Age:peopleAge;
+    Gender:peopleGender;
+  }
+const peopleName:peopleName='Teddy';
+const peopleAge:peopleAge=5;
+const peopleGender:peopleGender='Male'
+const people:people={
+    Name:peopleName,
+    Age:peopleAge,
+    Gender:peopleGender
+};
+console.log(people);
 
